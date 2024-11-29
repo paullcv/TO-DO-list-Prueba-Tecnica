@@ -47,6 +47,11 @@ Configura los archivos `.env`
 #### Copia el archivo .env.example y renómbralo como .env
 cp backend/.env.example backend/.env
 
+(Solo en este caso backend seria la palabra de ejemplo, el cambio que se debera a hacer esta en la carpeta TO-DO-list) asi:
+
+cp TO-DO-list/.env.example TO-DO-list/.env
+
+
 ```
 
 Configura las variables de conexión a la base de datos en `backend/.env`:
@@ -83,6 +88,8 @@ DB_PASSWORD=rootpassword
 
 5. Configura el backend:
    ```bash
+   si se tuviese algun error al correr el docker file por el composer install que esta dentro del docker file ejecutar lo siguiente: docker-compose exec backend composer install
+
    docker-compose exec backend php artisan key:generate
    docker-compose exec backend php artisan migrate
    docker-compose exec backend php artisan config:clear
